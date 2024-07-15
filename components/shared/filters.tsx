@@ -18,6 +18,8 @@ export const Filters: React.FC<Props> = ({ className }) => {
   useQueryFilters(filters);
 
   const updatePrices = (prices: number[]) => {
+    console.log(prices);
+
     filters.setPrices('priceFrom', prices[0]);
     filters.setPrices('priceTo', prices[1]);
   };
