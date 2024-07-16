@@ -35,8 +35,8 @@ export const useFilters = (): ReturnProps => {
   );
 
   const [prices, setPrices] = React.useState<PriceProps>({
-    priceFrom: Number(searchParams.get('priceFrom')) ?? 0,
-    priceTo: Number(searchParams.get('priceTo')) ?? 0,
+    priceFrom: Number(searchParams.get('priceFrom')) || undefined,
+    priceTo: Number(searchParams.get('priceTo')) || undefined,
   });
 
   const [sizes, { toggle: toggleSizes }] = useSet(new Set<string>(searchParams.get('sizes')?.split(',') || []));
